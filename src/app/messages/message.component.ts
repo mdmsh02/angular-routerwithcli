@@ -14,7 +14,7 @@ import { MessageService } from '../messages/message.service';
                 </a>
             </span>
         </div>
-        <div *ngFor="let message of messageService.messages; let i=index">
+        <div *ngFor="let message of getMessages(); let i=index">
             <div *ngIf="i<10" class="message-row">
                 {{ message }}
             </div>
@@ -33,5 +33,8 @@ export class MessageComponent {
         // Close the popup.
         this.router.navigate([{outlets: {popup:null}}]);
         this.messageService.isDisplayed = false;
+    }
+    getMessages(): string[] {
+        return this.messageService.getMessages();
     }
 }

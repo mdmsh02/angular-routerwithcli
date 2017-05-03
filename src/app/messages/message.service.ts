@@ -9,4 +9,7 @@ export class MessageService {
         let currentDate = new Date();
         this.messages.unshift(message + ' at ' + currentDate.toLocaleString());
     }
+    getMessages(): string[] {
+        return this.messages;
+    }
 }

@@ -43,4 +43,10 @@ export class AppComponent {
         this.router.navigate([{outlets: {popup:null}}]);
         this.messageService.isDisplayed = false;
     }
+    isLoggedIn(): boolean {
+        return this.authService.isLoggedIn();
+    }
+    isDisplayed(): boolean {
+        return this.messageService.isDisplayed;
+    }
 }

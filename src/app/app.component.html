@@ -15,19 +15,19 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li *ngIf="authService.isLoggedIn()">
+                <li *ngIf="isLoggedIn()">
                     <a>Welcome {{ authService.currentUser.userName }}</a>
                 </li>
-                <li *ngIf="!messageService.isDisplayed">
+                <li *ngIf="!isDisplayed()">
                     <a (click)="displayMessages()">Show Messages</a>
                 </li>
-                <li *ngIf="messageService.isDisplayed">
+                <li *ngIf="isDisplayed()">
                     <a (click)="hideMessages()">Hide Messages</a>
                 </li>
-                <li *ngIf="!authService.isLoggedIn()">
+                <li *ngIf="!isLoggedIn()">
                     <a [routerLink]="['/login']">Log In</a>
                 </li>
-                <li *ngIf="authService.isLoggedIn()">
+                <li *ngIf="isLoggedIn()">
                     <a (click)="logOut()">Log Out</a>
                 </li>
             </ul>
